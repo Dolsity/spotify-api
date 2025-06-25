@@ -1,22 +1,5 @@
 {
-  "compilerOptions": {
-    "target": "esnext",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "esnext", // commonjs
-    "moduleResolution": "node",
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
-    "useDefineForClassFields": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "noEmit": true,
-    "allowJs": false,
-    "jsx": "react-jsx",
-    "skipLibCheck": true,
-    "isolatedModules": true,
-    "types": ["vitest/globals"]
-  },
+  "files": [],
   "include": [".vite.config.ts", "src"],
   "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }]
 }
