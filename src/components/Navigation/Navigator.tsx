@@ -1,16 +1,18 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 import { AppBar, Box, IconButton, List, SwipeableDrawer, Toolbar, Typography } from '@mui/material'
 
 import Avatar from '@mui/material/Avatar'
 import Divider from '@mui/material/Divider'
-
 import Tooltip from '@mui/material/Tooltip'
 import CloseIcon from '@mui/icons-material/Close'
 
+import useAppSelector from '../../hooks/useAppSelector'
 import DrawerItem from './DrawerItem'
 
 const Navigator = () => {
+  const token = useAppSelector((state) => state.token)
+
   const [open, setOpen] = useState(false)
 
   const data: iDrawerItem[] = [
@@ -24,9 +26,37 @@ const Navigator = () => {
     {
       id: 'nav-login',
       title: 'Login',
-      url: '#',
+      url: '/login',
       icon: undefined,
-      condition: () => true,
+      condition: () => !token,
+    },
+    {
+      id: 'nav-top-artists',
+      icon: undefined,
+      title: 'Top Artists',
+      url: '#',
+      condition: () => !!token,
+    },
+    {
+      id: 'nav-recently-played',
+      icon: undefined,
+      title: 'Recently Played',
+      url: '#',
+      condition: () => !!token,
+    },
+    {
+      id: 'nav-deauthorize',
+      icon: undefined,
+      title: 'Deauthorize App',
+      url: '/deauthorize',
+      condition: () => !!token,
+    },
+    {
+      id: 'nav-logout',
+      icon: undefined,
+      title: 'Logout',
+      url: '/logout',
+      condition: () => !!token,
     },
   ]
 
