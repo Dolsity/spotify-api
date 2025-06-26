@@ -1,21 +1,29 @@
 import { HashRouter, Route, Routes } from 'react-router-dom'
+import { CssBaseline, ThemeProvider } from '@mui/material'
 
-import Home from './pages/Home.tsx'
-import NotFound from './pages/NotFound.tsx'
+import Home from './pages/Home'
+import NotFound from './pages/NotFound'
+
+import theme from './theme'
 
 export function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
-  )
+	return (
+		<>
+			<ThemeProvider theme={theme}>
+				<CssBaseline />
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="*" element={<NotFound />} />
+				</Routes>
+			</ThemeProvider>
+		</>
+	)
 }
 
 export function WrappedApp() {
-  return (
-    <HashRouter>
-      <App />
-    </HashRouter>
-  )
+	return (
+		<HashRouter>
+			<App />
+		</HashRouter>
+	)
 }
