@@ -80,7 +80,7 @@ const Navigator = () => {
                 sx={{
                   width: 38,
                   height: 38,
-                  border: '1.5px solid #25b359', // TODO: Green border if authenticated, else default
+                  border: `1.5px solid ${token ? '#25b359' : '#cccccc'}`,
                 }}
               ></Avatar>
             </Tooltip>
