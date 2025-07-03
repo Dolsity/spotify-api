@@ -24,7 +24,14 @@ const theme = createTheme({
     },
     text: {
       primary: '#FFFFFF',
-      secondary: '#B3B3B3',
+      secondary: '#EEEEEE',
+    },
+    action: {
+      active: '#FFFFFF',
+      hover: '#535353',
+      selected: '#1DB954',
+      disabled: '#DDDDDD',
+      disabledBackground: '#333333',
     },
     divider: '#B3B3B3',
   },
