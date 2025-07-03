@@ -75,12 +75,14 @@ const Navigator = () => {
             sx={{ ml: 'auto' }}
           >
             <Tooltip title="Open Menu" placement="left">
-              {/* TODO: Default avatar if not authenticated, else user avatar */}
               <Avatar
                 sx={{
                   width: 38,
                   height: 38,
-                  border: `1.5px solid ${token ? '#25b359' : '#cccccc'}`,
+                  border: '1.5px solid',
+                  borderColor: token ? 'success.main' : 'warning.main',
+                  backgroundColor: 'background.paper',
+                  color: 'background.default',
                 }}
               ></Avatar>
             </Tooltip>
@@ -106,7 +108,6 @@ const Navigator = () => {
                   py: 1,
                 }}
               >
-                {/* TODO: Hello <user> if authenticated, else "spotify stats" */}
                 <Typography variant="h6" textTransform={'uppercase'}>
                   spotify stats
                 </Typography>
