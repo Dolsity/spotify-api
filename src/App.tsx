@@ -4,6 +4,7 @@ import { CssBaseline, ThemeProvider } from '@mui/material'
 import Navigator from './components/Navigation/Navigator'
 
 import Home from './pages/Home'
+import Artist from './pages/Artist'
 import TopArtists from './pages/TopArtists'
 import Login from './pages/Login'
 import Logout from './pages/Logout'
@@ -26,6 +27,10 @@ export function App() {
             <Route path="medium-term" element={<TopArtists />} />
             <Route path="long-term" element={<TopArtists />} />
             <Route path="*" element={<Navigate to="short-term" replace />} />
+          </Route>
+          <Route path="artist">
+            <Route index element={<Navigate to="" replace />} />
+            <Route path=":id" element={<Artist />} />
           </Route>
           <Route path="login" element={<Login />} />
           <Route path="logout" element={<Logout />} />
