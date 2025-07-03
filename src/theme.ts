@@ -1,39 +1,70 @@
 import { createTheme } from '@mui/material'
 
-const palette = {
-  success: {
-    main: '#1DB954',
-  },
-  error: {
-    main: '#E22134',
-  },
-  warning: {
-    main: '#FF5722',
-  },
-}
-
 const theme = createTheme({
   palette: {
-    ...palette,
+    success: {
+      main: '#1DB954',
+      contrastText: '#FFFFFF',
+    },
+    error: {
+      main: '#E22134',
+      contrastText: '#FFFFFF',
+    },
+    warning: {
+      main: '#FF5745',
+      contrastText: '#FFFFFF',
+    },
     primary: {
       main: '#121212',
-      contrastText: '#DDDDDD',
+      contrastText: '#FFFFFF',
     },
     background: {
-      paper: '#161616',
-      default: '#20262D',
+      default: '#CCCCCC',
+      paper: '#212121',
     },
     text: {
       primary: '#FFFFFF',
       secondary: '#B3B3B3',
     },
-    divider: '#222222',
-    action: {
-      active: '#FFFFFF',
-      hover: '#333333',
-      selected: '#444444',
-      disabled: '#555555',
-      disabledBackground: '#666666',
+    divider: '#B3B3B3',
+  },
+  typography: {
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    h1: {
+      fontSize: '2.5rem',
+      fontWeight: 500,
+    },
+    h2: {
+      fontSize: '2rem',
+      fontWeight: 500,
+    },
+    h3: {
+      fontSize: '1.75rem',
+      fontWeight: 500,
+    },
+    h4: {
+      fontSize: '1.5rem',
+      fontWeight: 500,
+    },
+    h5: {
+      fontSize: '1.25rem',
+      fontWeight: 500,
+    },
+    h6: {
+      fontSize: '1rem',
+      fontWeight: 500,
+    },
+    body1: {
+      fontSize: '1rem',
+      fontWeight: 400,
+    },
+    body2: {
+      fontSize: '0.875rem',
+      fontWeight: 400,
+    },
+    caption: {
+      fontSize: '0.75rem',
+      fontWeight: 400,
     },
   },
 })

@@ -1,9 +1,10 @@
-import { HashRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes, Navigate } from 'react-router-dom'
 import { CssBaseline, ThemeProvider } from '@mui/material'
 
 import Navigator from './components/Navigation/Navigator'
 
 import Home from './pages/Home'
+import TopArtists from './pages/TopArtists'
 import Login from './pages/Login'
 import Logout from './pages/Logout'
 import NotFound from './pages/NotFound'
@@ -19,6 +20,13 @@ export function App() {
         <Navigator />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="top-artists">
+            <Route index element={<Navigate to="short-term" replace />} />
+            <Route path="short-term" element={<TopArtists />} />
+            <Route path="medium-term" element={<TopArtists />} />
+            <Route path="long-term" element={<TopArtists />} />
+            <Route path="*" element={<Navigate to="short-term" replace />} />
+          </Route>
           <Route path="login" element={<Login />} />
           <Route path="logout" element={<Logout />} />
           <Route path="deauthorize" element={<Deauthorize />} />

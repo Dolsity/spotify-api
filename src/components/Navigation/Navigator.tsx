@@ -34,7 +34,7 @@ const Navigator = () => {
       id: 'nav-top-artists',
       icon: undefined,
       title: 'Top Artists',
-      url: '#',
+      url: '/top-artists',
       condition: () => !!token,
     },
     {
@@ -62,7 +62,7 @@ const Navigator = () => {
 
   return (
     <>
-      <AppBar sx={{ bgcolor: 'primary.main' }} position="relative">
+      <AppBar sx={{ bgcolor: 'primary.main' }} position="sticky">
         <Toolbar>
           <Typography variant="h5" textTransform={'uppercase'}>
             spotify stats
