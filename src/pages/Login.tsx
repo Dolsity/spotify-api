@@ -38,7 +38,7 @@ const Login = () => {
         state: 'spotify',
         redirect_uri: 'http://localhost:5173/login',
         scope:
-          'user-top-read user-read-recently-played user-follow-read user-follow-modify user-library-read user-library-modify',
+          'user-top-read user-read-recently-played user-follow-read user-library-read user-read-private user-read-playback-state user-read-currently-playing',
       })
 
       window.location.href = 'https://accounts.spotify.com/authorize?' + query.toString()
