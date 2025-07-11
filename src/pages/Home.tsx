@@ -22,7 +22,7 @@ const Home = () => {
       id: 'home-top-tracks',
       header: 'Top Tracks',
       body: 'See the top 100 tracks you played on Spotify in the last month, 6 months and lifetime!',
-      url: '#',
+      url: '/top-tracks',
     },
     {
       id: 'home-top-artists',
@@ -34,6 +34,18 @@ const Home = () => {
       id: 'home-recents',
       header: 'Recently Played',
       body: 'See the last 50 tracks that you played and when you played them on Spotify!',
+      url: '#',
+    },
+    {
+      id: 'home-playlists',
+      header: 'Playlists',
+      body: 'See the playlists you created and followed on Spotify!',
+      url: '#',
+    },
+    {
+      id: 'home-recommendations',
+      header: 'Recommendations',
+      body: 'Get personalized recommendations based on your listening habits and preferences!',
       url: '#',
     },
   ]
@@ -49,7 +61,7 @@ const Home = () => {
             textTransform="uppercase"
             gutterBottom
           >
-            Spotify API
+            Spotify Stats
           </Typography>
           <Typography variant="h6" align="center" color="text.secondary">
             {token ? 'View your Spotify Statistics' : 'Log in to see your Spotify Statistics'}
@@ -72,7 +84,7 @@ const Home = () => {
           </Typography>
         </Container>
       </Box>
-      <Grid sx={{ my: 2, py: 3 }} container spacing={1.5} justifyContent="center">
+      <Grid sx={{ my: 2, py: 2 }} container spacing={1} justifyContent="center">
         {cards.map((card) => (
           <HomeCard key={card.id} card={card} />
         ))}
