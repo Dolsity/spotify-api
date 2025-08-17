@@ -61,7 +61,7 @@ const Home = () => {
             textTransform="uppercase"
             gutterBottom
           >
-            Spotify Stats
+            Spotify API
           </Typography>
           <Typography variant="h6" align="center" color="text.secondary">
             {token ? 'View your Spotify Statistics' : 'Log in to see your Spotify Statistics'}

@@ -65,7 +65,7 @@ const Navigator = () => {
       <AppBar sx={{ bgcolor: 'primary.main' }} position="sticky">
         <Toolbar>
           <Typography variant="h5" textTransform={'uppercase'}>
-            spotify stats
+            spotify api
           </Typography>
           <IconButton
             onClick={() => setOpen(true)}
@@ -109,7 +109,7 @@ const Navigator = () => {
                 }}
               >
                 <Typography variant="h6" textTransform={'uppercase'}>
-                  spotify stats
+                  spotify api
                 </Typography>
                 <IconButton
                   onClick={() => setOpen(false)}
