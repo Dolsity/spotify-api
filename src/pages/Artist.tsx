@@ -14,10 +14,10 @@ import useGetFullTopTracksQuery from '../hooks/useGetFullTopTracksQuery'
 /**
  * * Name
  * * Followers
+ * * Check if you are following
+ * * Genres
  * * Image
- * * Link
  * * Top Tracks
- * * Check if you are following this
  * * Position in Top Artists
  * * Appearances in Top Tracks
  * * Appearances in Recents
@@ -127,7 +127,6 @@ const Artist = () => {
           <Track key={i} track={t} i={i} />
         ))}
       </List>
-
       <Grid sx={{ m: 'auto', my: 2 }} spacing={1} justifyContent="space-evenly" container>
         {appearances.map((appearance, i) => (
           <AppearanceCard key={i} appearance={appearance} />
