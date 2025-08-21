@@ -22,7 +22,7 @@ const AppearanceCard = ({ appearance }: { appearance: iAppearanceCard }) => {
               variant="h3"
               sx={{
                 fontWeight: 'bold',
-                mr: 1,
+                mr: 1.8,
                 minWidth: 40,
                 textAlign: 'center',
               }}
