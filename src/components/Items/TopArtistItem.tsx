@@ -23,7 +23,7 @@ const TopArtistItem = ({ artist, i }: { artist?: SpotifyApi.ArtistObjectFull; i:
   }
 
   return (
-    <Grid item>
+    <Grid>
       <Card sx={{ p: 0, minWidth: 250 }} onClick={() => handleArtistClick(artist)}>
         <CardActionArea>
           <AsyncImage
@@ -31,10 +31,9 @@ const TopArtistItem = ({ artist, i }: { artist?: SpotifyApi.ArtistObjectFull; i:
             skeleton={<Skeleton variant="rectangular" width={250} height={250} />}
             component={(thumbnailUrl) => (
               <CardMedia
+                sx={{ width: 250, height: 250 }}
                 component="img"
                 alt="Picture"
-                width={250}
-                height={250}
                 image={thumbnailUrl}
               />
             )}
