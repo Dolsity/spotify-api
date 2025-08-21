@@ -45,15 +45,26 @@ const ArtistCard = ({ artistId }: { artistId?: string }) => {
           />
           <CardMedia
             sx={{
-              ml: 2,
+              mx: 1.5,
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
+              minWidth: 0,
             }}
           >
             {artist ? (
               <>
-                <Typography variant="h5">{artist.name}</Typography>
+                <Typography
+                  variant="h5"
+                  noWrap
+                  sx={{
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  {artist.name}
+                </Typography>
                 <Typography variant="subtitle1">{getFollowers(artist)}</Typography>
                 {following ? (
                   <>
