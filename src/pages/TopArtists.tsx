@@ -39,7 +39,7 @@ const TopArtists = () => {
             p: 2,
             mx: 'auto',
             maxWidth: 'lg',
-            borderRadius: { xs: 0, lg: 2 }, // 0 below lg, 2 on lg+
+            borderRadius: { xs: 0, lg: 2 },
           }}
         >
           <Typography variant="h4">Top 100 Artists</Typography>
