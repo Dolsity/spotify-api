@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { TabContext } from '@mui/lab'
 import { Box, Tab, Tabs, Card, Container, Grid, LinearProgress, Typography } from '@mui/material'
 
-import { tabs } from '../Tabs'
+import { tabs } from '../tabs'
 import TopArtistItem from '../components/Items/TopArtistItem'
 import useAuthenticated from '../hooks/useAuthenticated'
 import useGetFullTopArtistsQuery from '../hooks/useGetFullTopArtistsQuery'
@@ -33,13 +33,20 @@ const TopArtists = () => {
 
   return term ? (
     <TabContext value={term}>
-      <Box>
-        <Card sx={{ p: 2, borderRadius: 0 }}>
+      <Box sx={{ p: { xs: 0, lg: 2 } }}>
+        <Card
+          sx={{
+            p: 2,
+            mx: 'auto',
+            maxWidth: 'lg',
+            borderRadius: { xs: 0, lg: 2 }, // 0 below lg, 2 on lg+
+          }}
+        >
           <Typography variant="h4">Top 100 Artists</Typography>
-          <Typography variant="h6" gutterBottom>
-            {tabs.find((t) => t.term === term)?.description}
+          <Typography variant="h6">{tabs.find((t) => t.term === term)?.description}</Typography>
+          <Typography variant="body1" color="text.secondary">
+            These are the artists you listened to the most.
           </Typography>
-          {/* <Typography variant="body1">These are the artists you listen to the most.</Typography> */}
         </Card>
         <Container>
           <Grid sx={{ my: 2 }} container spacing={5} justifyContent="space-evenly">
