@@ -37,7 +37,6 @@ const ArtistDetails = ({ artist }: { artist?: SpotifyApi.ArtistObjectFull }) => 
         sx={{
           bgcolor: 'background.paper',
           my: { xs: 2, sm: 4 },
-          mb: { sm: 4 },
           borderRadius: 1,
           boxShadow: 3,
           p: { xs: 2, sm: 0 },
@@ -52,15 +51,12 @@ const ArtistDetails = ({ artist }: { artist?: SpotifyApi.ArtistObjectFull }) => 
               <Skeleton sx={{ borderRadius: 5 }} variant="rectangular" width={200} height={200} />
             }
             component={(thumbnailUrl) => (
-              <Card sx={{ borderRadius: 5 }} onClick={() => setShowImage(true)}>
+              <Card
+                sx={{ borderRadius: 5, width: 200, height: 200 }}
+                onClick={() => setShowImage(true)}
+              >
                 <CardActionArea>
-                  <CardMedia
-                    component="img"
-                    width={200}
-                    height={200}
-                    image={thumbnailUrl}
-                    alt="Image"
-                  />
+                  <CardMedia component="img" image={thumbnailUrl} alt="Image" />
                 </CardActionArea>
               </Card>
             )}
@@ -76,43 +72,57 @@ const ArtistDetails = ({ artist }: { artist?: SpotifyApi.ArtistObjectFull }) => 
           flexDirection="column"
           justifyContent="center"
         >
+          {/* <PageIndicator>ARTIST{following && ' • Following'}</PageIndicator> */}
           <PageIndicator>ARTIST</PageIndicator>
           {artist ? (
             <>
               <Typography variant="h4">{artist.name}</Typography>
-              <Typography variant="h5">
+              <Typography variant="h6">
                 {artist.followers.total.toLocaleString()} Followers
               </Typography>
-              <Typography variant="body1">{following ? 'Following' : null}</Typography>
+              {following && artist.genres?.length === 0 && <Divider sx={{ my: 0.8 }} />}
+              {following && <Typography variant="body2">Following</Typography>}
             </>
           ) : (
             <>
               <Skeleton variant="text" width={200} height={45} />
-              <Skeleton variant="text" width={160} height={40} />
-              <Skeleton variant="text" width={120} height={40} />
+              <Skeleton variant="text" width={160} height={35} />
+              <Skeleton variant="text" width={110} height={30} />
             </>
           )}
-          <Divider sx={{ my: 1 }} />
-          <Stack direction="row" spacing={1} mx={{ xs: 'auto', sm: 0 }}>
-            {artist?.genres ? (
-              artist.genres.map((genre, i) => (
-                <Typography
-                  sx={{
-                    bgcolor: 'primary.main',
-                    p: 0.4,
-                    borderRadius: 1.5,
-                  }}
-                  key={i}
-                  variant="body2"
-                  color="text.primary"
-                >
-                  {genre}
-                </Typography>
-              ))
-            ) : (
-              <Skeleton variant="rounded" width={100} height={30} />
-            )}
-          </Stack>
+          {artist ? (
+            <>
+              {artist.genres && artist.genres.length > 0 && (
+                <>
+                  <Divider sx={{ my: 1 }} />
+                  <Stack
+                    direction="row"
+                    spacing={1}
+                    useFlexGap
+                    flexWrap="wrap"
+                    justifyContent={{ xs: 'center', sm: 'flex-start' }}
+                  >
+                    {artist.genres.map((genre, i) => (
+                      <Typography
+                        sx={{
+                          bgcolor: 'primary.main',
+                          p: 0.35,
+                          borderRadius: 1,
+                        }}
+                        key={i}
+                        variant="body2"
+                        color="text.primary"
+                      >
+                        {genre}
+                      </Typography>
+                    ))}
+                  </Stack>
+                </>
+              )}
+            </>
+          ) : (
+            <Skeleton variant="text" width={100} height={25} />
+          )}
         </Grid>
       </Grid>
       <Dialog open={showImage} onClose={() => setShowImage(false)} BackdropComponent={Backdrop}>
