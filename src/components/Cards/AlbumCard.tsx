@@ -59,8 +59,8 @@ const AlbumCard = ({ albumId, position }: { albumId?: string; position?: number 
                 </Typography>
                 <Typography variant="subtitle1">Track #{position}</Typography>
                 <Typography variant="subtitle2" color="text.secondary">
-                  {album.total_tracks} track
-                  {album.total_tracks > 1 ? 's' : ''}
+                  {album.tracks.total} track
+                  {album.tracks.total > 1 ? 's' : ''}
                 </Typography>
                 <Typography variant="subtitle2" color="text.secondary">
                   {album.release_date}
