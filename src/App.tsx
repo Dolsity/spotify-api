@@ -6,6 +6,7 @@ import Navigator from './components/Navigation/Navigator'
 import Home from './pages/Home'
 import Artist from './pages/Artist'
 import TopArtists from './pages/TopArtists'
+import TopTracks from './pages/TopTracks'
 import Track from './pages/Track'
 import Login from './pages/Login'
 import Logout from './pages/Logout'
@@ -29,6 +30,13 @@ export function App() {
               <Route path="short-term" element={<TopArtists />} />
               <Route path="medium-term" element={<TopArtists />} />
               <Route path="long-term" element={<TopArtists />} />
+              <Route path="*" element={<Navigate to="short-term" replace />} />
+            </Route>
+            <Route path="top-tracks">
+              <Route index element={<Navigate to="short-term" replace />} />
+              <Route path="short-term" element={<TopTracks />} />
+              <Route path="medium-term" element={<TopTracks />} />
+              <Route path="long-term" element={<TopTracks />} />
               <Route path="*" element={<Navigate to="short-term" replace />} />
             </Route>
             <Route path="track">
