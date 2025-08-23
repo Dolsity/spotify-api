@@ -44,7 +44,7 @@ const TopArtists = () => {
         >
           <Typography variant="h4">Top 100 Artists</Typography>
           <Typography variant="h6">{tabs.find((t) => t.term === term)?.description}</Typography>
-          <Typography variant="body1" color="text.secondary">
+          <Typography variant="subtitle2" color="text.secondary">
             These are the artists you listened to the most.
           </Typography>
         </Card>
