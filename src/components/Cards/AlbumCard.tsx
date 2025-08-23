@@ -32,7 +32,12 @@ const AlbumCard = ({ albumId, position }: { albumId?: string; position?: number 
             src={album?.images[0]?.url}
             skeleton={<Skeleton variant="rectangular" width={120} height={120} />}
             component={(thumbnailUrl) => (
-              <CardMedia component="img" sx={{ width: 120 }} image={thumbnailUrl} alt="Picture" />
+              <CardMedia
+                component="img"
+                sx={{ width: 120, height: 120 }}
+                image={thumbnailUrl}
+                alt="Picture"
+              />
             )}
           />
           <CardMedia
