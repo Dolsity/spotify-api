@@ -87,7 +87,7 @@ const Track = () => {
             sx={{ bgcolor: 'background.paper', p: 1, mb: 1, borderRadius: 1 }}
             variant="h5"
           >
-            Artists on the Track:
+            Artists on the track:
           </Typography>
           {track ? (
             track.artists.map((artist) => <ArtistCard key={artist.id} artistId={artist.id} />)
