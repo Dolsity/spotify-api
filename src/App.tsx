@@ -5,6 +5,7 @@ import Navigator from './components/Navigation/Navigator'
 
 import Home from './pages/Home'
 import Artist from './pages/Artist'
+import Album from './pages/Album'
 import TopArtists from './pages/TopArtists'
 import TopTracks from './pages/TopTracks'
 import Track from './pages/Track'
@@ -42,6 +43,10 @@ export function App() {
             <Route path="track">
               <Route index element={<Navigate to="" replace />} />
               <Route path=":id" element={<Track />} />
+            </Route>
+            <Route path="album">
+              <Route index element={<Navigate to="" replace />} />
+              <Route path=":id" element={<Album />} />
             </Route>
             <Route path="artist">
               <Route index element={<Navigate to="" replace />} />
