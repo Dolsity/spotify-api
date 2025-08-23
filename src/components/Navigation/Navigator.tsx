@@ -38,6 +38,13 @@ const Navigator = () => {
       condition: () => !!token,
     },
     {
+      id: 'nav-top-tracks',
+      icon: undefined,
+      title: 'Top Tracks',
+      url: '/top-tracks',
+      condition: () => !!token,
+    },
+    {
       id: 'nav-recently-played',
       icon: undefined,
       title: 'Recently Played',
