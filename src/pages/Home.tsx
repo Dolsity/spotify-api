@@ -5,13 +5,6 @@ import { Box, Button, Container, Grid, Stack, Typography } from '@mui/material'
 import HomeCard from '../components/Cards/HomeCard'
 import useAppSelector from '../hooks/useAppSelector'
 
-interface iHomeCard {
-  id: string
-  header: string
-  body: string
-  url: string
-}
-
 const Home = () => {
   const navigate = useNavigate()
 
