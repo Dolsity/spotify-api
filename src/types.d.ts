@@ -15,3 +15,9 @@ interface iDrawerDropdown {
   condition: () => boolean
 }
 
+interface iHomeCard {
+  id: string
+  header: string
+  body: string
+  url: string
+}
