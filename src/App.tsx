@@ -4,6 +4,7 @@ import { HashRouter, Route, Routes, Navigate } from 'react-router-dom'
 import { CssBaseline, ThemeProvider, Box } from '@mui/material'
 
 import Navigator from './components/Navigation/Navigator'
+import ErrorDialog from './components/Popups/ErrorDialog'
 
 import Home from './pages/Home'
 import Artist from './pages/Artist'
@@ -76,6 +77,7 @@ export function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Box>
+        <ErrorDialog />
       </ThemeProvider>
     </>
   )
