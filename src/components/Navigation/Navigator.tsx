@@ -9,13 +9,14 @@ import CloseIcon from '@mui/icons-material/Close'
 
 import useAppSelector from '../../hooks/useAppSelector'
 import DrawerItem from './DrawerItem'
+import DrawerDropdown from './DrawerDropdown'
 
 const Navigator = () => {
   const token = useAppSelector((state) => state.token)
 
   const [open, setOpen] = useState(false)
 
-  const data: iDrawerItem[] = [
+  const data: (iDrawerItem | iDrawerDropdown)[] = [
     {
       id: 'nav-home',
       title: 'Home',
@@ -35,6 +36,30 @@ const Navigator = () => {
       icon: undefined,
       title: 'Top Artists',
       url: '/top-artists',
+      drop: 0,
+      items: [
+        {
+          id: 'nav-top-artists-short-term',
+          icon: undefined,
+          title: 'Last Month',
+          url: '/top-artists/short-term',
+          condition: () => !!token,
+        },
+        {
+          id: 'nav-top-artists-medium-term',
+          icon: undefined,
+          title: 'Last 6 Months',
+          url: '/top-artists/medium-term',
+          condition: () => !!token,
+        },
+        {
+          id: 'nav-top-artists-long-term',
+          icon: undefined,
+          title: 'All Time',
+          url: '/top-artists/long-term',
+          condition: () => !!token,
+        },
+      ],
       condition: () => !!token,
     },
     {
@@ -42,6 +67,30 @@ const Navigator = () => {
       icon: undefined,
       title: 'Top Tracks',
       url: '/top-tracks',
+      drop: 0,
+      items: [
+        {
+          id: 'nav-top-tracks-short-term',
+          icon: undefined,
+          title: 'Last Month',
+          url: '/top-tracks/short-term',
+          condition: () => !!token,
+        },
+        {
+          id: 'nav-top-tracks-medium-term',
+          icon: undefined,
+          title: 'Last 6 Months',
+          url: '/top-tracks/medium-term',
+          condition: () => !!token,
+        },
+        {
+          id: 'nav-top-tracks-long-term',
+          icon: undefined,
+          title: 'All Time',
+          url: '/top-tracks/long-term',
+          condition: () => !!token,
+        },
+      ],
       condition: () => !!token,
     },
     {
@@ -134,9 +183,13 @@ const Navigator = () => {
             }
           >
             <Divider />
-            {data.map((el) => (
-              <DrawerItem key={el.id} setOpen={setOpen} item={el} />
-            ))}
+            {data.map((el) =>
+              'drop' in el ? (
+                <DrawerDropdown key={el.id} setOpen={setOpen} dropdown={el} />
+              ) : (
+                <DrawerItem key={el.id} setOpen={setOpen} item={el} />
+              )
+            )}
           </List>
         </Box>
       </SwipeableDrawer>
