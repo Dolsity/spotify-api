@@ -57,13 +57,6 @@ const Artist = () => {
   })
   const { data: userRecents } = useGetRecentsQuery({ token })
 
-  interface iAppearanceCard {
-    hash: boolean
-    text: string
-    link: string
-    condition: () => number | undefined
-  }
-
   const appearances: iAppearanceCard[] = [
     {
       hash: true,
