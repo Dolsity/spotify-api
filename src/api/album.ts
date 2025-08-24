@@ -19,27 +19,7 @@ const album = api.injectEndpoints({
       query: ({ token, ids }) => ['containsMySavedAlbums', [ids], token],
       providesTags: ['SavedAlbums'],
     }),
-    addToMySavedAlbums: builder.mutation<
-      SpotifyApi.SaveAlbumsForUserResponse,
-      { ids: string[] } & RequireToken
-    >({
-      query: ({ token, ids }) => ['addToMySavedAlbums', [ids], token],
-      invalidatesTags: ['SavedAlbums'],
-    }),
-    removeFromMySavedAlbums: builder.mutation<
-      SpotifyApi.RemoveAlbumsForUserResponse,
-      { ids: string[] } & RequireToken
-    >({
-      query: ({ token, ids }) => ['removeFromMySavedAlbums', [ids], token],
-      invalidatesTags: ['SavedAlbums'],
-    }),
   }),
 })
 
-export const {
-  useAddToMySavedAlbumsMutation,
-  useGetAlbumQuery,
-  useGetAlbumTracksQuery,
-  useGetIsInMySavedAlbumsQuery,
-  useRemoveFromMySavedAlbumsMutation,
-} = album
+export const { useGetAlbumQuery, useGetAlbumTracksQuery, useGetIsInMySavedAlbumsQuery } = album
