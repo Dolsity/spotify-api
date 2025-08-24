@@ -63,9 +63,9 @@ const TopTrackItem = ({
                 sx={{
                   width: 45,
                   height: 45,
-                  borderRadius: 0,
                   mx: 1,
                 }}
+                variant="rounded"
                 src={thumbnailUrl}
               />
             )}
@@ -94,7 +94,7 @@ const TopTrackItem = ({
           src={track?.album.images[0]?.url}
           skeleton={<Skeleton variant="rounded" width={45} height={45} />}
           component={(thumbnailUrl) => (
-            <Avatar sx={{ width: 45, height: 45, borderRadius: 0 }} src={thumbnailUrl} />
+            <Avatar variant="rounded" sx={{ width: 45, height: 45 }} src={thumbnailUrl} />
           )}
         />
       </TableCell>
