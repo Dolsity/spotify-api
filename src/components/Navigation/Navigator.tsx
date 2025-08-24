@@ -94,10 +94,10 @@ const Navigator = () => {
       condition: () => !!token,
     },
     {
-      id: 'nav-recently-played',
+      id: 'nav-recents',
       icon: undefined,
       title: 'Recently Played',
-      url: '#',
+      url: '/recents',
       condition: () => !!token,
     },
     {
