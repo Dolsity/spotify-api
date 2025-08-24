@@ -2,7 +2,7 @@ import React, { type Dispatch, type SetStateAction, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { ExpandLess, ExpandMore } from '@mui/icons-material'
-import { Collapse, List, ListItemButton, ListItemText } from '@mui/material'
+import { Collapse, Divider, List, ListItemButton, ListItemText } from '@mui/material'
 
 const DrawerDropdown = ({
   setOpen,
@@ -27,7 +27,8 @@ const DrawerDropdown = ({
         {dropdownOpen ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
       <Collapse in={dropdownOpen} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding dense>
+        <Divider variant="middle" />
+        <List component="div" disablePadding>
           {dropdown.items.map((item) =>
             item.condition() ? (
               <ListItemButton key={item.id} sx={{ pl: 4 }} onClick={() => redirect(item.url)}>
