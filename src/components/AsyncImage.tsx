@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, ReactElement } from 'react'
 
 const AsyncImage = ({
   src,
@@ -6,8 +6,8 @@ const AsyncImage = ({
   component,
 }: {
   src: string | undefined
-  skeleton: JSX.Element
-  component: (url: string) => JSX.Element
+  skeleton: ReactElement
+  component: (url: string) => ReactElement
 }) => {
   const [fade, setFade] = useState(false)
   const [thumbnailUrl, setThumbnailUrl] = useState<string | null>(null)
