@@ -2,7 +2,7 @@ interface iAppearanceCard {
   text: string
   hash: boolean
   link: string
-  condition: () => boolean
+  condition: () => number | boolean | undefined
 }
 
 interface iDrawerItem {
