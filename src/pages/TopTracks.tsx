@@ -64,7 +64,6 @@ const TopTracks = () => {
               These are the tracks you listen to the most
             </Typography>
           </Card>
-
           <Card sx={{ my: 3 }}>
             {smallScreen ? (
               <List>
