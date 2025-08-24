@@ -95,22 +95,21 @@ const RecentItem = ({
       <TableCell>
         {recent ? (
           <Typography variant="body1">
-            {recent.track.artists
-              .map((artist) => (
+            {recent.track.artists.map((artist, idx) => (
+              <span key={artist.id}>
                 <Link
                   sx={{
                     cursor: 'pointer',
                   }}
-                  key={artist.id}
                   color="inherit"
                   onClick={() => handleArtistClick(artist)}
                   underline="hover"
                 >
                   {artist.name}
                 </Link>
-              ))
-              .reduce<(JSX.Element | string)[]>((r, a) => r.concat(a, ', '), [])
-              .slice(0, -1)}
+                {idx < recent.track.artists.length - 1 && ', '}
+              </span>
+            ))}
           </Typography>
         ) : (
           <Skeleton variant="text" width={120} height={20} />
