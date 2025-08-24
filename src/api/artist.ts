@@ -31,29 +31,13 @@ const artist = api.injectEndpoints({
       query: ({ token, ids }) => ['isFollowingArtists', [ids], token],
       providesTags: ['SavedArtists'],
     }),
-    followArtists: builder.mutation<
-      SpotifyApi.FollowArtistsOrUsersResponse,
-      { ids: string[] } & RequireToken
-    >({
-      query: ({ token, ids }) => ['followArtists', [ids], token],
-      invalidatesTags: ['SavedArtists'],
-    }),
-    unfollowArtists: builder.mutation<
-      SpotifyApi.UnfollowArtistsOrUsersResponse,
-      { ids: string[] } & RequireToken
-    >({
-      query: ({ token, ids }) => ['unfollowArtists', [ids], token],
-      invalidatesTags: ['SavedArtists'],
-    }),
   }),
 })
 
 export const {
-  useFollowArtistsMutation,
   useGetArtistQuery,
   useGetArtistTopTracksQuery,
   useGetArtistsQuery,
   useGetIsFollowingArtistsQuery,
   useGetTopArtistsQuery,
-  useUnfollowArtistsMutation,
 } = artist
