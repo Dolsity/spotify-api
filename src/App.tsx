@@ -8,6 +8,7 @@ import Navigator from './components/Navigation/Navigator'
 import Home from './pages/Home'
 import Artist from './pages/Artist'
 import Album from './pages/Album'
+import RecentlyPlayed from './pages/RecentlyPlayed'
 import TopArtists from './pages/TopArtists'
 import TopTracks from './pages/TopTracks'
 import Track from './pages/Track'
@@ -68,6 +69,7 @@ export function App() {
               <Route index element={<Navigate to="" replace />} />
               <Route path=":id" element={<Artist />} />
             </Route>
+            <Route path="recents" element={<RecentlyPlayed />} />
             <Route path="login" element={<Login />} />
             <Route path="logout" element={<Logout />} />
             <Route path="deauthorize" element={<Deauthorize />} />
